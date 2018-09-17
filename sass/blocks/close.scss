@@ -1,0 +1,8 @@
+.close {
+  display: none;
+  
+  //Если таблетка, то меню не закрывается никогда
+  @media (min-width: $tablet) {
+    display: block;
+  }
+}

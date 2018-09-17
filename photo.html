@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="туризм, развлечение">
+    <meta name="decription" content="Лучший город для путешествий">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sedona фото</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel ="preload" href="/fonts/ptsans.woff2" as="font">
+    <link rel ="preload" href="/fonts/ptsansbold.woff2" as="font">
+  </head>
+  <body class="page-body">
+    <div style="display: none">
+      @@include("./build/img/sprite.svg")
+    </div>
+
+    <div class="page-body__wrapper">
+
+      @@include("./parthtml/page-header.html", {
+          "class" : "page-header__container page-header__container--small",
+          "title" : "page-header__title page-header__title--small",
+          "href" : {
+            "main" : "class=\"main-nav__link\" href=\"index.min.html\"",
+            "foto" : "class=\"main-nav__link main-nav__link--current\"",
+            "form" : "class=\"main-nav__link\" href=\"form.min.html\""
+          },
+          "img" : "img/text-sedona.svg"
+      })
+
+      <main class="page-main">
+        <h1 class="page-main__title">Фото и видео</h1>
+        <p class="page-main__text">Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике.</p>
+
+        <section class="foto">
+          <h2 class="visually-hidden">Фото города седона</h2>
+          
+          <ul class="foto__list">
+            <li class="foto__items">
+              <a class="foto__link" href="#">
+                <picture class="foto__picture">
+                  <source class="foto__img" src="img/webp-photo-sunset-mobile@1x.webp" srcset="img/webp-photo-sunset-mobile@2x.webp 2x" type="image/webp">
+                  <img class="foto__img" src="img/webp-photo-sunset-mobile@1x.jpg" srcset="img/webp-photo-sunset-mobile@2x.jpg 2x" alt="Неродный просторы">
+                </picture>
+              </a>
+              <h3 class="foto__title">Неродные просторы</h3>
+              <span class="foto__author">Автор фото: Борис</span>
+              <span class="foto__like">1350</span>
+            </li>
+            <li class="foto__items">
+              <a class="foto__link" href="#">
+                <picture class="foto__picture">
+                  <source class="foto__img" src="img/webp-photo-cactus-mobile@1x.webp" srcset="img/webp-photo-cactus-mobile@2x.webp 2x" type="image/webp">
+                  <img class="foto__img" src="img/webp-photo-cactus-mobile@1x.jpg" srcset="img/webp-photo-cactus-mobile@2x.jpg 2x" alt="Местная растительность">
+                </picture>
+              </a>
+              <h3 class="foto__title">Местная растительность</h3>
+              <span class="foto__author">Автор фото: Сергей</span>
+              <span class="foto__like">143</span>
+            </li>
+            <li class="foto__items">
+              <a class="foto__link" href="#">
+                <picture class="foto__picture">
+                  <source class="foto__img" src="img/webp-photo-roads-mobile@1x.webp" srcset="img/webp-photo-roads-mobile@2x.webp 2x" type="image/webp">
+                  <img class="foto__img" src="img/webp-photo-roads-mobile@1x.jpg" srcset="img/webp-photo-roads-mobile@2x.jpg 2x" alt="Дорога на север" >
+                </picture>
+              </a>
+              <h3 class="foto__title">Дорога на север</h3>
+              <span class="foto__author">Автор фото: Петр</span>
+              <span class="foto__like">96</span>
+            </li>
+            <li class="foto__items">
+              <a class="foto__link" href="#">
+                <picture class="foto__picture">
+                  <source class="foto__img" src="img/webp-photo-bridge-mobile@1x.webp" srcset="img/webp-photo-bridge-mobile@2x.webp 2x" type="image/webp">
+                  <img class="foto__img" src="img/webp-photo-bridge-mobile@1x.jpg" srcset="img/webp-photo-bridge-mobile@2x.jpg 2x" alt="Мост дьявола" >
+                </picture>
+              </a>
+              <h3 class="foto__title">Мост дьявола</h3>
+              <span class="foto__author">Автор фото: Антон</span>
+              <span class="foto__like">254</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="video">
+          <h2 class="visually-hidden">Видеопрезантации о Седоне</h2>
+          <b class="video__title">Все еще сомневаетесь?</b>
+          <p class="video__text">Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
+
+          <div class="video__container">
+            <picture class="video__picture">
+              <source class="video__img" src="img/webp-video-mobile@1x.webp" srcset="img/webp-video-mobile@2x.webp 2x" type="image/webp">
+              <img class="video__img" src="img/webp-video-mobile@1x.jpg" srcset="img/webp-video-mobile@2x.jpg 2x" alt="Превью видео">
+            </picture>
+
+            <div class="video__range">
+              <div class="video__bar">
+                <div class="video__scale"></div>
+              </div>
+            </div>
+
+            <div class="video__tools">
+              <svg class="video__instrument video__instrument--replay" width="16" height="20">
+                <use xlink:href="img/sprite.svg#sprite-icon-video-replay"></use>
+              </svg>
+              <svg class="video__instrument video__instrument--subtitles" width="32" height="20">
+                <use xlink:href="img/sprite.svg#sprite-icon-video-subtitles"></use>
+              </svg>
+              <svg class="video__instrument video__instrument--fullscreen" width="20" height="20">
+                <use xlink:href="img/sprite.svg#sprite-icon-video-fullscreen"></use>
+              </svg>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      @@include("./parthtml/page-footer.html")
+
+    </div>
+
+    <script src="js/script.min.js"></script>
+  </body>
+</html>

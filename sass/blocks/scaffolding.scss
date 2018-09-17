@@ -1,26 +1,61 @@
 @font-face {
-  font-family: "Open Sans";
+  font-family: "PT Sans";
   font-style: "normal";
+  font-weight: 400;
   font-display: swap;
-  font-weight: 700;
-  src:  local("OpenSansBold"),
-        local("Open Sans Bold"),
-        url("../fonts/opensansbold.woff") format("woff"),
-        url("../fonts/opensansbold.woff2") format("woff2");
+  src:  local("PTSans"),
+        local("PT Sans"),
+        url("../fonts/ptsans.woff") format("woff"),
+        url("../fonts/ptsans.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "PT Sans";
+  font-style: "normal";
+  font-weight: 700;
+  font-display: swap;
+  src:  local("PTSansBold"),
+        local("PT Sans Bold"),
+        url("../fonts/ptsansbold.woff") format("woff"),
+        url("../fonts/ptsansbold.woff2") format("woff2");
+}
 
 .page-body {
   padding: 0;
   margin: 0;
+  min-width: 320px;
+  box-sizing: border-box;
 
-  font-family: _____________;
-  font-size: _________;
-  line-height: ___________;
-  font-weight: _________;
-  color: ___________;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: $black;
 
-  background-color: _____________;
+  background-color: #f2f2f2;
+
+  @media (min-width: $desktop) {
+    min-width: $desktop;
+    background-color: #f2f2f2;
+  }
+}
+
+.page-body__wrapper {
+  margin: 0 auto;
+  max-width: 320px;
+
+  background-color: #fff;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,.2);
+
+  @media (min-width: $tablet) {
+    max-width: $tablet;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: $desktop - $padd-des * 2;
+  }
 }
 
 *, *::before, *::after {

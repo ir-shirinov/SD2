@@ -1,12 +1,11 @@
 "use strict";
 
-
 var autoprefixer = require("autoprefixer");
 var browserSync = require("browser-sync").create();
 var del = require("del");
 var gulp = require("gulp");
 var csso = require("gulp-csso");
-var include = require("gulp-file-include");
+var fileinclude = require("gulp-file-include");
 var htmlmin = require('gulp-htmlmin');
 var imagemin = require("gulp-imagemin");
 var plumber = require("gulp-plumber");
@@ -14,9 +13,10 @@ var postcss = require("gulp-postcss");
 var rename = require("gulp-rename");
 var sass = require("gulp-sass");
 var svgstore = require("gulp-svgstore");
-var uglify = require('gulp-uglify');
+var uglify = require("gulp-uglify");
 var webp = require("gulp-webp");
-var pump = require('pump');
+var imageminJpegRecompress = require("imagemin-jpeg-recompress");
+var pump = require("pump");
 var run = require("run-sequence");
 var cheerio = require('gulp-cheerio');
 
@@ -32,15 +32,15 @@ var path = {
     src: { //Пути откуда брать исходники
         html: '*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: 'js/script.js',//В стилях и скриптах нам понадобятся только main файлы
-        style: 'scss/style.scss',
-        img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        style: 'sass/style.scss',
+        img: 'img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         imgsprite : 'img/**/sprite-*.svg', //файлы для svg спрайтов
         imgorigin : 'original-img/**/*.{png,jpg,svg}', //оригиналы изображений безсжатия
-        imgwebp: 'original-img/**/webp-*.{png,jpg}' //файлы для webp
-        fonts: 'src/fonts/**/*.*'
+        imgwebp: 'original-img/**/webp-*.{png,jpg}', //файлы для webp
+        fonts: 'fonts/**/*.*'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-        html: "['/**/*.html', '!/build/**/*.html']",
+        html: './**/*.html',
         js: 'js/**/*.js',
         style: "sass/**/*.{scss,sass}",
         img: 'img/**/*.*',
@@ -52,15 +52,18 @@ var path = {
 gulp.task("server", function() {
   browserSync.init({
     server: path.site,
+    index: 'index.min.html',
     notify: false,
     open: true,
     cors: true,
-    ui: false
+    ui: false,
+    browser: "firefox",
+    tunnel: true //тунель для теста сайта
   });
 
   gulp.watch(path.watch.style, ["style"]);
   gulp.watch(path.watch.html, ["html"]);
-  gulp.watch(path.watch.js, ["js", "compress"]).on("change", browserSync.reload);
+  gulp.watch(path.watch.js, ["js", "compressjs"]).on("change", browserSync.reload);
   gulp.watch(path.watch.img, ["copy"]).on("change", browserSync.reload);
 });
 
@@ -150,6 +153,7 @@ gulp.task("clean", function(){
   return del(path.site);
   })
 
+//Оптимизация изображения ,без сжатия jpg
 gulp.task("images", function() {
   return gulp.src(path.src.imgorigin)
     .pipe(imagemin([
@@ -157,7 +161,24 @@ gulp.task("images", function() {
       imagemin.jpegtran({progressive: true}),
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest(path.build.img));
+    .pipe(gulp.dest("img/"));
+});
+
+//Оптимизация изображения со сжатием jpg
+gulp.task("images-compression", function() {
+  return gulp.src(path.src.imgorigin)
+    .pipe(imagemin([
+      imagemin.optipng({optimizationLevel: 3}),
+      imageminJpegRecompress({
+        loops: 5,
+        min: 70,
+        max: 80,
+        quality:'medium',
+        progressive: true
+      }),
+      imagemin.svgo()
+    ]))
+    .pipe(gulp.dest("img/"));
 });
 
 gulp.task("webp", function(){
@@ -179,10 +200,28 @@ gulp.task("build", function(done) {
   );
 });
 
-gulp.tasl("imagemin", function(done){
+gulp.task("img", function(done){
   run(
     "images",
     "webp",
     done
   );
+});
+
+gulp.task("img-zip", function(done){
+  run(
+    "images-compression",
+    "webp",
+    done
+  );
+});
+
+//Вспомогательная одноразовые функции
+
+gulp.task("renamewebp", function() {
+  return gulp.src("original-img/*.jpg")
+    .pipe(rename({
+    prefix: "webp-"
+  }))
+    .pipe(gulp.dest("original-img/"))
 });

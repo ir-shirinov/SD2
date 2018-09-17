@@ -1,0 +1,142 @@
+.features__title {
+  @include pad-mar-0;
+  padding: 0 $padd-mob;
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.features__list {
+  @include list-0;
+}
+
+.features__items{
+  position: relative;
+
+  background-color: #eeeeee;
+
+  &::after{
+    content: "";
+
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+
+    width: 280px;
+    height: 1px;
+    
+    background-color: #d6d6d6;
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.features__items--blue {
+  padding: 60px 0;
+  padding-bottom: 0;
+
+  color: #fff;
+
+  background-color: $blue;
+
+  &:first-child {
+    background-image: url("../img/bg-triangle.svg");
+    background-repeat: no-repeat;
+    background-position:top 0 left 50%;
+    background-size: 320px 37px;
+  }
+
+  &::after{
+    display: none;
+  }
+}
+
+.features__items--bridge {
+  padding: 20px 0;
+  padding-bottom: 0;
+}
+
+.features__subtitle {
+  @include pad-mar-0;
+
+  padding: 0 $padd-mob;
+  padding-top: 20px;
+  padding-bottom: 5px;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.features__number {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.features__text {
+  @include pad-mar-0;
+  padding: 0 $padd-mob;
+  padding-bottom: 40px;
+
+  line-height: 21px;
+}
+
+.features__picture {
+  display: block;
+}
+
+.features__img {
+  display: block;
+}
+
+.features__sublist {
+  @include list-0;
+  padding-bottom: 35px;
+
+  background-color: #fff;
+  color: #000;
+}
+
+.features__subitems {
+  padding-left: 70px;
+  padding-right: $padd-mob;
+  padding-top: 34px;
+
+  background-repeat: no-repeat;
+  background-position: left $padd-mob top 23px;
+
+  &--house {
+    background-image: url("../img/icon-house.svg");
+    background-size: 37px 38px;
+  }
+
+  &--gift {
+    background-image: url("../img/icon-gift.svg");
+    background-size: 32px 38px;
+  }
+
+  &--burger {
+    background-image: url("../img/icon-burger.svg");
+    background-size: 40px 35px;
+  }
+}
+
+.features__header {
+  @include pad-mar-0;
+  margin-bottom: 11px;
+
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.features__subtext {
+  @include pad-mar-0;
+
+  line-height: 21px;
+  text-align: left;
+}

@@ -1,16 +1,104 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="keywords" content="*****">
-  <meta name="decription" content="*******">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>*****</title>
-  <link rel="stylesheet" href="css/style.min.css">
-  <link rel ="preload" href="/fonts/opensans.woff2" as="font">
-  <link rel ="preload" href="/fonts/opensansbold.woff2" as="font">
-</head>
-  <body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="туризм, развлечение">
+    <meta name="decription" content="Лучший город для путешествий">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sedona</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel ="preload" href="/fonts/ptsans.woff2" as="font">
+    <link rel ="preload" href="/fonts/ptsansbold.woff2" as="font">
+  </head>
+  <body class="page-body">
+    <div style="display: none">
+      @@include("./build/img/sprite.svg")
+    </div>
+    
+    <div class="page-body__wrapper">
+
+      @@include("./parthtml/page-header.html", {
+        "class" : "page-header__container",
+        "title" : "page-header__title",
+        "href" : {
+          "main" : "class=\"main-nav__link main-nav__link--current\"",
+          "foto" : "class=\"main-nav__link\" href=\"photo.min.html\"",
+          "form" : "class=\"main-nav__link\" href=\"form.min.html\""
+        },
+        "img" : "img/text-sedona-index.svg"
+      })
+
+      <main class="page-main">
+        <h1 class="page-main__title">СЕДОНА — небольшой городок в аризоне, заслуживающий большего!</h1>
+
+        <section class="features">
+          <h2 class="features__title">Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!</h2>
+          <ul class="features__list">
+            <li class="features__items features__items--blue">
+              <h3 class="features__subtitle">Настоящий городок</h3>
+              <span class="features__number">— № 1 —</span>
+              <p class="features__text">Cедона не аттракцион для туристов, там течет своя жизнь</p>
+              <picture class="features__picture">
+                <source class="features__img" src="img/webp-main-city-mobile@1x.webp" srcset="img/webp-main-city-mobile@2x.webp 2x" type="image/webp">
+                <img class="features__img" src="img/webp-main-city-mobile@1x.jpg" srcset="img/webp-main-city-mobile@2x.jpg 2x" alt="Изображение города седона">
+              </picture>
+              <ul class="features__sublist">
+                <li class="features__subitems features__subitems--house">
+                  <h4 class="features__header">Жилье</h4>
+                  <p class="features__subtext">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+                </li>
+                <li class="features__subitems features__subitems--gift">
+                  <h4 class="features__header">Сувениры</h4>
+                  <p class="features__subtext">Не только китайского, но и местного производства!</p>
+                </li>
+                <li class="features__subitems features__subitems--burger">
+                  <h4 class="features__header">Еда</h4>
+                  <p class="features__subtext">Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы НЕ разочаруетесь!</p>
+                </li>
+              </ul>
+            </li>
+            <li class="features__items features__items--blue features__items--bridge">
+              <h3 class="features__subtitle">Там есть мост дьявола</h3>
+              <span class="features__number">— № 2 —</span>
+              <p class="features__text">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
+              <picture class="features__picture">
+                <source class="features__img" src="img/webp-main-bridge-mobile@1x.webp" srcset="img/webp-main-bridge-mobile@2x.webp 2x" type="image/webp">
+                <img class="features__img" src="img/webp-main-bridge-mobile@1x.jpg" srcset="img/webp-main-bridge-mobile@2x.jpg 2x" alt="Изображение моста дьявола">
+              </picture>
+            </li>
+            <li class="features__items">
+              <h3 class="features__subtitle">Небольшая площадь</h3>
+              <span class="features__number">— № 3 —</span>
+              <p class="features__text">ВСЕ интересные места находятся очень близко</p>
+            </li>
+            <li class="features__items">
+              <h3 class="features__subtitle">Красивая дорога</h3>
+              <span class="features__number">— № 4 —</span>
+              <p class="features__text">Ехать в седону из Лас-Вегаса совсем не скучно!</p>
+            </li>
+            <li class="features__items">
+              <h3 class="features__subtitle">Мало туристов</h3>
+              <span class="features__number">— № 5 —</span>
+              <p class="features__text">Большинство едет в гранд каньон и толпится там</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="hotel">
+          <h2 class="visually-hidden">Бронирование отеля</h2>
+          <b class="hotel__title">Заинтересовались?</b>
+          <p class="hotel__text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
+          <button class="hotel__btn btn" type="button">Найти гостиницу</button>
+        </section>
+
+        <section class="maps">
+          <iframe class="maps__img" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d148078.09054085694!2d-111.7722284602603!3d34.90414720457679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1537162156089" width="320" height="350" frameborder="0" allowfullscreen></iframe>
+        </section>
+      </main>
+
+      @@include("./parthtml/page-footer.html")
+    </div>
+
     <script src="js/script.min.js"></script>
   </body>
 </html>

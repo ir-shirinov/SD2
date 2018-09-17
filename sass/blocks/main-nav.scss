@@ -1,0 +1,85 @@
+.main-nav__list {
+  @include list-0;
+
+  @media (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: 165px 165px auto 165px 165px;
+  }
+
+  @media (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 250px 250px auto 250px 250px;
+  }
+}
+
+.main-nav__items {
+  &--form {
+    @media (min-width: $tablet) {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    }
+  }
+}
+
+.main-nav__link {
+  display: block;
+  padding: 8px $padd-mob;
+
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+
+  @media (max-width: $tablet - 0.1px) {
+    background-color: $blue;
+    box-shadow: inset 0 1px 0 0 rgba(255,255,255,.2),
+                inset 0 -1px 0 0 rgba(0,0,0,.2);
+
+    &[href]:hover {
+      background-color: #669ec0;
+    }
+
+    &[href]:active {
+      color: rgba(255,255,255,.3);
+
+      background-color: #5496bd;
+    }
+
+    &--shadow {
+    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.15) 0%, transparent 9px, transparent 100%);
+    background-image: -o-linear-gradient(bottom, rgba(0,0,0,.15) 0%, transparent 9px, transparent 100%);
+    background-image: linear-gradient(to top, rgba(0,0,0,.15) 0%, transparent 9px, transparent 100%);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    padding: 15px 5px;
+
+    font-size: 14px;
+    line-height: 26px;
+    color: #000;
+
+    &[href]:hover {
+      color: $blue;
+    }
+
+    &[href]:active {
+      color: rgba(0,0,0,.3);
+    }
+  }
+}
+
+.main-nav__link--current {
+  @media (min-width: $tablet) {
+    color: #766357;
+
+    &:hover {
+      color: #604e43;
+    }
+
+    &:active {
+      color: rgba(118,99,87,.3);
+    }
+  }
+}

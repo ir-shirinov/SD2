@@ -1,11 +1,10 @@
 {
-  "name": "my-project",
-  "version": "0.1.0",
+  "name": "Sedona",
+  "version": "2.1.0",
   "private": true,
-  "description": "Мой проект сайта",
+  "description": "Фиксированный адаптив на grid",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "imagemin" : "gulp imagemin",
     "build": "gulp build",
     "start": "npm run build && gulp server"
   },
@@ -33,6 +32,7 @@
     "gulp-svgstore": "^7.0.0",
     "gulp-uglify": "^3.0.1",
     "gulp-webp": "^3.0.0",
+    "imagemin-jpeg-recompress": "^5.1.0",
     "pump": "^3.0.0",
     "run-sequence": "^2.2.1"
   }

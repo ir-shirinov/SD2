@@ -1,0 +1,58 @@
+.foto__list {
+  @include list-0;
+
+  border-top: 1px solid #e5e5e5;
+}
+
+.foto__items {
+  padding: 22px $padd-mob;
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.foto__link {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.foto__picture {
+  display: block;
+}
+
+.foto__img {
+  display: block;
+}
+
+.foto__title {
+  @include pad-mar-0;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+}
+
+.foto__author {
+  display: block;
+  margin-bottom: 10px;
+
+  line-height: 24px;
+  text-transform: none;
+  text-align: left;
+}
+
+.foto__like {
+  display: block;
+  padding-left: 37px;
+
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+
+  background-image: url("../img/icon-like.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 22px 20px;
+
+}

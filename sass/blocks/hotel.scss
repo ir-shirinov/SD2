@@ -1,0 +1,19 @@
+.hotel{
+  padding: 20px $padd-mob;
+  padding-bottom: 50px;
+}
+
+.hotel__title {
+  display: block;
+  margin-bottom: 16px;
+
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.hotel__text {
+  @include pad-mar-0;
+  margin-bottom: 37px;
+
+  line-height: 24px;
+}

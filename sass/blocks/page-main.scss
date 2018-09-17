@@ -1,0 +1,17 @@
+.page-main__title {
+  @include pad-mar-0;
+  padding: 40px $padd-mob + 5px;
+  padding-bottom: 25px;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.page-main__text {
+  @include pad-mar-0;
+
+  padding: 0 $padd-mob;
+  padding-bottom: 24px;
+
+  line-height: 24px;
+}
