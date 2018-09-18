@@ -1,6 +1,18 @@
 .video {
   padding-top: 32px;
   padding-bottom: 44px;
+
+  @media (min-width: $tablet) {
+    padding: 0 $padd-tab;
+    padding-top: 53px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0;
+    padding-top: 53px;
+    width: 800px;
+    margin: 0 auto;
+  }
 }
 
 .video__title {
@@ -8,6 +20,13 @@
   margin-bottom: 27px;
 
   font-size: 18px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 30px;
+
+    font-size: 30px;
+    line-height: 30px;
+  }
 }
 
 .video__text {
@@ -17,6 +36,12 @@
   padding: 0 $padd-mob + 10px;
 
   line-height: 24px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 73px;
+
+    padding: 0 110px;
+  }
 }
 
 .video__picture {
@@ -25,16 +50,48 @@
 
 .video__img {
   display: block;
+
+  @media (min-width: $tablet) {
+    margin: 0 auto;
+  }
+}
+
+.video__tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 45px auto;
+  width: 280px;
+  min-height: 111px;
+  margin: 0 auto;
+  margin-top: -45px;
+
+  background-color: #f2f2f2;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 95px;
+    width: 100%;
+    min-height: 95px;
+    margin-top: -95px;
+
+    background-color: rgba(0,0,0,.6);
+  }
 }
 
 .video__range {
-  width: 280px;
-  height: 45px;
+  position: relative;
+
+  grid-column-start: 1;
+  grid-column-end: 5;
+  width: 100%;
   margin: 0 auto;
 
   background-color: rgba(0,0,0,.6);
 
-  transform: translateY(-100%);
+  @media (min-width: $tablet) {
+    grid-column-start: 2;
+    grid-column-end: 7;
+  }
 }
 
 .video__bar {
@@ -45,10 +102,15 @@
   width: 235px;
   height: 3px;
   margin: 0 auto;
+  padding: 0;
 
   background-color: rgba(255,255,255,.2);
 
   transform: translate(-50%,-50%);
+
+  @media (min-width: $tablet) {
+    width: 100%;
+  }
 }
 
 .video__scale {
@@ -66,36 +128,104 @@
   cursor: pointer;
 }
 
-.video__tools {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-items: center;
-  justify-items: center;
-  width: 280px;
-  height: 66px;
-  margin: 0 auto;
-  margin-top: -45px;
+.video__btn {
+  display: block;
 
-  background-color: #f2f2f2;
-}
-
-.video__instrument {
-  fill: #5c6870;
+  background-color: transparent;
+  border: none;
 
   cursor: pointer;
 
+  @media (min-width: $tablet) {
+    background-color: rgba(0,0,0,.6);
+  }
+
+  &--subtitles {
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+     @media (min-width: $tablet) {
+      grid-column-start: 7;
+      grid-column-end: 8;
+    }
+  }
+
+  &--replay {
+    @media (min-width: $tablet) {
+      order: -1;
+    }
+  }
+}
+
+.video__instrument {
+  display: block;
+  margin: 0 auto;
+
+  fill: #5c6870;
+
+  @media (min-width: $tablet) {
+    fill: #fff;
+  }
+}
+
+.video__btn--replay {
   &:hover {
-    fill: $black;
+    & .video__instrument--replay {
+      fill: $black;
+    }
   }
 
   &:active {
-    fill: rgba(3,3,3,.3);
+    & .video__instrument--replay {
+      fill: rgba(3,3,3,.3);
+    }
+  }
+}
+
+
+//Запираем стили по наведению только на мобайл
+@media (max-width: $tablet - 0.1px) {
+
+  .video__btn--replay {
+    &:hover {
+      & .video__instrument--replay {
+        fill: $black;
+      }
+    }
+
+    &:active {
+      & .video__instrument--replay {
+        fill: rgba(3,3,3,.3);
+      }
+    }
   }
 
-  &--subtitles{
-  grid-column-start: 3;
-  grid-column-end: 4;
+  .video__btn--subtitles {
+    &:hover {
+      & .video__instrument--subtitles {
+        fill: $black;
+      }
+    }
 
-  justify-self: end;
+    &:active {
+      & .video__instrument--subtitles {
+        fill: rgba(3,3,3,.3);
+      }
+    }
   }
+
+  .video__btn--fullscreen {
+    &:hover {
+      & .video__instrument--fullscreen {
+        fill: $black;
+      }
+    }
+
+    &:active {
+      & .video__instrument--fullscreen {
+        fill: rgba(3,3,3,.3);
+      }
+    }
+  }
+
 }

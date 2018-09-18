@@ -34,11 +34,17 @@
         <section class="features">
           <h2 class="features__title">Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!</h2>
           <ul class="features__list">
-            <li class="features__items features__items--blue">
-              <h3 class="features__subtitle">Настоящий городок</h3>
-              <span class="features__number">— № 1 —</span>
-              <p class="features__text">Cедона не аттракцион для туристов, там течет своя жизнь</p>
-              <picture class="features__picture">
+            <li class="features__items features__items--blue features__items--city">  
+              <div class="features__container">
+                <h3 class="features__subtitle">Настоящий городок</h3>
+                <span class="features__number">— № 1 —</span>
+                <p class="features__text">Cедона не аттракцион для туристов, там течет своя жизнь</p>
+              </div>
+              <picture class="features__picture features__picture--city">
+                <source class="features__img" media="(min-width: 1280px") srcset="img/webp-main-city-desktop@1x.webp 1x, img/webp-main-city-desktop@2x.webp 2x" type="image/webp">
+                <source class="features__img" media="(min-width: 1280px") srcset="img/webp-main-city-desktop@1x.jpg 1x, img/webp-main-city-desktop@2x.jpg 2x">
+                <source class="features__img" media="(min-width: 768px") srcset="img/webp-main-city-tablet@1x.webp 1x, img/webp-main-city-tablet@2x.webp 2x" type="image/webp">
+                <source class="features__img" media="(min-width: 768px") srcset="img/webp-main-city-tablet@1x.jpg 1x, img/webp-main-city-tablet@2x.jpg 2x">
                 <source class="features__img" src="img/webp-main-city-mobile@1x.webp" srcset="img/webp-main-city-mobile@2x.webp 2x" type="image/webp">
                 <img class="features__img" src="img/webp-main-city-mobile@1x.jpg" srcset="img/webp-main-city-mobile@2x.jpg 2x" alt="Изображение города седона">
               </picture>
@@ -58,10 +64,16 @@
               </ul>
             </li>
             <li class="features__items features__items--blue features__items--bridge">
-              <h3 class="features__subtitle">Там есть мост дьявола</h3>
-              <span class="features__number">— № 2 —</span>
-              <p class="features__text">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
-              <picture class="features__picture">
+              <div class="features__container">
+                <h3 class="features__subtitle">Там есть мост дьявола</h3>
+                <span class="features__number">— № 2 —</span>
+                <p class="features__text">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
+              </div>
+              <picture class="features__picture features__picture--bridge">
+                <source class="features__img" media="(min-width: 1280px") srcset="img/webp-main-bridge-desktop@1x.webp 1x, img/webp-main-bridge-desktop@2x.webp 2x" type="image/webp">
+                <source class="features__img" media="(min-width: 1280px") srcset="img/webp-main-bridge-desktop@1x.jpg 1x, img/webp-main-bridge-desktop@2x.jpg 2x">
+                <source class="features__img" media="(min-width: 768px") srcset="img/webp-main-bridge-tablet@1x.webp 1x, img/webp-main-bridge-tablet@2x.webp 2x" type="image/webp">
+                <source class="features__img" media="(min-width: 768px") srcset="img/webp-main-bridge-tablet@1x.jpg 1x, img/webp-main-bridge-tablet@2x.jpg 2x">
                 <source class="features__img" src="img/webp-main-bridge-mobile@1x.webp" srcset="img/webp-main-bridge-mobile@2x.webp 2x" type="image/webp">
                 <img class="features__img" src="img/webp-main-bridge-mobile@1x.jpg" srcset="img/webp-main-bridge-mobile@2x.jpg 2x" alt="Изображение моста дьявола">
               </picture>
@@ -92,7 +104,7 @@
         </section>
 
         <section class="maps">
-          <iframe class="maps__img" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d148078.09054085694!2d-111.7722284602603!3d34.90414720457679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1537162156089" width="320" height="350" frameborder="0" allowfullscreen></iframe>
+          <iframe class="maps__img" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d148078.09054085694!2d-111.7722284602603!3d34.90414720457679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1537162156089" frameborder="0" allowfullscreen></iframe>
         </section>
       </main>
 

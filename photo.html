@@ -29,56 +29,80 @@
       })
 
       <main class="page-main">
-        <h1 class="page-main__title">Фото и видео</h1>
+        <h1 class="page-main__title page-main__title--big">Фото и видео</h1>
         <p class="page-main__text">Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике.</p>
 
         <section class="foto">
           <h2 class="visually-hidden">Фото города седона</h2>
           
           <ul class="foto__list">
-            <li class="foto__items">
+            <li class="foto__items foto__items--first">
               <a class="foto__link" href="#">
                 <picture class="foto__picture">
-                  <source class="foto__img" src="img/webp-photo-sunset-mobile@1x.webp" srcset="img/webp-photo-sunset-mobile@2x.webp 2x" type="image/webp">
+                  <source class="foto__img" media="(min-width: 1280px") srcset="img/webp-photo-sunset-desktop@1x.webp 1x, img/webp-photo-sunset-desktop@2x.webp 2x" type="image/webp">
+                  <source class="foto__img" media="(min-width: 1280px") srcset="img/webp-photo-sunset-desktop@1x.jpg 1x, img/webp-photo-sunset-desktop@2x.jpg 2x">
+                  <source class="foto__img" media="(min-width: 768px") srcset="img/webp-photo-sunset-tablet@1x.webp 1x, img/webp-photo-sunset-tablet@2x.webp 2x" type="image/webp">
+                  <source class="foto__img" media="(min-width: 768px") srcset="img/webp-photo-sunset-tablet@1x.jpg 1x, img/webp-photo-sunset-tablet@2x.jpg 2x">
+                  <source class="foto__img" srcset="img/webp-photo-sunset-mobile@1x.webp 1x, img/webp-photo-sunset-mobile@2x.webp 2x" type="image/webp">
                   <img class="foto__img" src="img/webp-photo-sunset-mobile@1x.jpg" srcset="img/webp-photo-sunset-mobile@2x.jpg 2x" alt="Неродный просторы">
                 </picture>
               </a>
-              <h3 class="foto__title">Неродные просторы</h3>
-              <span class="foto__author">Автор фото: Борис</span>
-              <span class="foto__like">1350</span>
+              <div class="foto__container">
+                <h3 class="foto__title">Неродные просторы</h3>
+                <span class="foto__author">Автор фото: Борис</span>
+                <span class="foto__like">1350</span>
+              </div>
             </li>
             <li class="foto__items">
               <a class="foto__link" href="#">
                 <picture class="foto__picture">
+                  <source class="foto__img" media="(min-width: 1280px") srcset="img/webp-photo-cactus-desktop@1x.webp 1x, img/webp-photo-cactus-desktop@2x.webp 2x" type="image/webp">
+                  <source class="foto__img" media="(min-width: 1280px") srcset="img/webp-photo-cactus-desktop@1x.jpg 1x, img/webp-photo-cactus-desktop@2x.jpg 2x">
+                  <source class="foto__img" media="(min-width: 768px") srcset="img/webp-photo-cactus-tablet@1x.webp 1x, img/webp-photo-cactus-tablet@2x.webp 2x" type="image/webp">
+                  <source class="foto__img" media="(min-width: 768px") srcset="img/webp-photo-cactus-tablet@1x.jpg 1x, img/webp-photo-cactus-tablet@2x.jpg 2x">
                   <source class="foto__img" src="img/webp-photo-cactus-mobile@1x.webp" srcset="img/webp-photo-cactus-mobile@2x.webp 2x" type="image/webp">
                   <img class="foto__img" src="img/webp-photo-cactus-mobile@1x.jpg" srcset="img/webp-photo-cactus-mobile@2x.jpg 2x" alt="Местная растительность">
                 </picture>
               </a>
-              <h3 class="foto__title">Местная растительность</h3>
-              <span class="foto__author">Автор фото: Сергей</span>
-              <span class="foto__like">143</span>
+              <div class="foto__container">
+                <h3 class="foto__title">Местная растительность</h3>
+                <span class="foto__author">Автор фото: Сергей</span>
+                <span class="foto__like">143</span>
+              </div>
             </li>
             <li class="foto__items">
               <a class="foto__link" href="#">
                 <picture class="foto__picture">
+                  <source class="foto__img" media="(min-width: 1280px") srcset="img/webp-photo-roads-desktop@1x.webp 1x, img/webp-photo-roads-desktop@2x.webp 2x" type="image/webp">
+                  <source class="foto__img" media="(min-width: 1280px") srcset="img/webp-photo-roads-desktop@1x.jpg 1x, img/webp-photo-roads-desktop@2x.jpg 2x">
+                  <source class="foto__img" media="(min-width: 768px") srcset="img/webp-photo-roads-tablet@1x.webp 1x, img/webp-photo-roads-tablet@2x.webp 2x" type="image/webp">
+                  <source class="foto__img" media="(min-width: 768px") srcset="img/webp-photo-roads-tablet@1x.jpg 1x, img/webp-photo-roads-tablet@2x.jpg 2x">
                   <source class="foto__img" src="img/webp-photo-roads-mobile@1x.webp" srcset="img/webp-photo-roads-mobile@2x.webp 2x" type="image/webp">
                   <img class="foto__img" src="img/webp-photo-roads-mobile@1x.jpg" srcset="img/webp-photo-roads-mobile@2x.jpg 2x" alt="Дорога на север" >
                 </picture>
               </a>
-              <h3 class="foto__title">Дорога на север</h3>
-              <span class="foto__author">Автор фото: Петр</span>
-              <span class="foto__like">96</span>
+              <div class="foto__container">
+                <h3 class="foto__title">Дорога на север</h3>
+                <span class="foto__author">Автор фото: Петр</span>
+                <span class="foto__like">96</span>
+              </div>
             </li>
             <li class="foto__items">
               <a class="foto__link" href="#">
                 <picture class="foto__picture">
+                  <source class="foto__img" media="(min-width: 1280px") srcset="img/webp-photo-bridge-desktop@1x.webp 1x, img/webp-photo-bridge-desktop@2x.webp 2x" type="image/webp">
+                  <source class="foto__img" media="(min-width: 1280px") srcset="img/webp-photo-bridge-desktop@1x.jpg 1x, img/webp-photo-bridge-desktop@2x.jpg 2x">
+                  <source class="foto__img" media="(min-width: 768px") srcset="img/webp-photo-bridge-tablet@1x.webp 1x, img/webp-photo-bridge-tablet@2x.webp 2x" type="image/webp">
+                  <source class="foto__img" media="(min-width: 768px") srcset="img/webp-photo-bridge-tablet@1x.jpg 1x, img/webp-photo-bridge-tablet@2x.jpg 2x">
                   <source class="foto__img" src="img/webp-photo-bridge-mobile@1x.webp" srcset="img/webp-photo-bridge-mobile@2x.webp 2x" type="image/webp">
                   <img class="foto__img" src="img/webp-photo-bridge-mobile@1x.jpg" srcset="img/webp-photo-bridge-mobile@2x.jpg 2x" alt="Мост дьявола" >
                 </picture>
               </a>
-              <h3 class="foto__title">Мост дьявола</h3>
-              <span class="foto__author">Автор фото: Антон</span>
-              <span class="foto__like">254</span>
+              <div class="foto__container">
+                <h3 class="foto__title">Мост дьявола</h3>
+                <span class="foto__author">Автор фото: Антон</span>
+                <span class="foto__like">254</span>
+              </div>
             </li>
           </ul>
         </section>
@@ -90,26 +114,40 @@
 
           <div class="video__container">
             <picture class="video__picture">
+              <source class="video__img" media="(min-width: 1280px") srcset="img/webp-video-desktop@1x.webp 1x, img/webp-video-desktop@2x.webp 2x" type="image/webp">
+              <source class="video__img" media="(min-width: 1280px") srcset="img/webp-video-desktop@1x.jpg 1x, img/webp-video-desktop@2x.jpg 2x">
+              <source class="video__img" media="(min-width: 768px") srcset="img/webp-video-tablet@1x.webp 1x, img/webp-video-tablet@2x.webp 2x" type="image/webp">
+              <source class="video__img" media="(min-width: 768px") srcset="img/webp-video-tablet@1x.jpg 1x, img/webp-video-tablet@2x.jpg 2x">
               <source class="video__img" src="img/webp-video-mobile@1x.webp" srcset="img/webp-video-mobile@2x.webp 2x" type="image/webp">
               <img class="video__img" src="img/webp-video-mobile@1x.jpg" srcset="img/webp-video-mobile@2x.jpg 2x" alt="Превью видео">
             </picture>
 
-            <div class="video__range">
-              <div class="video__bar">
-                <div class="video__scale"></div>
-              </div>
-            </div>
-
             <div class="video__tools">
-              <svg class="video__instrument video__instrument--replay" width="16" height="20">
+
+              <div class="video__range">
+                <div class="video__bar">
+                  <div class="video__scale"></div>
+                </div>
+              </div>
+              
+              <button class="video__btn video__btn--replay" type="button">
+                <svg class="video__instrument video__instrument--replay" width="16" height="20">
                 <use xlink:href="img/sprite.svg#sprite-icon-video-replay"></use>
               </svg>
-              <svg class="video__instrument video__instrument--subtitles" width="32" height="20">
-                <use xlink:href="img/sprite.svg#sprite-icon-video-subtitles"></use>
-              </svg>
-              <svg class="video__instrument video__instrument--fullscreen" width="20" height="20">
-                <use xlink:href="img/sprite.svg#sprite-icon-video-fullscreen"></use>
-              </svg>
+              </button>
+
+              <button class="video__btn video__btn--subtitles" type="button">
+                <svg class="video__instrument video__instrument--subtitles" width="32" height="20">
+                  <use xlink:href="img/sprite.svg#sprite-icon-video-subtitles"></use>
+                </svg>
+              </button>
+
+              <button class="video__btn video__btn--fullscreen" type="button">
+                <svg class="video__instrument video__instrument--fullscreen" width="20" height="20">
+                  <use xlink:href="img/sprite.svg#sprite-icon-video-fullscreen"></use>
+                </svg>
+              </button>
+
             </div>
           </div>
         </section>

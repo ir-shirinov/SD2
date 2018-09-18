@@ -8,4 +8,4 @@ btn.classList.remove('page-header__btn--open');
 btn.addEventListener('click', function(){
 	menu.classList.toggle('close');
 	btn.classList.toggle('page-header__btn--open');
-})
+});

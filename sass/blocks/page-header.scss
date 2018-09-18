@@ -99,7 +99,7 @@
                     url("../img/bg-back-mobile@1x.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position:bottom 0 left 50%, bottom 0  left 50%;;
-  background-size: 322px 26.11px, 768px 389px;
+  background-size: 326px 26.11px, 768px 389px;
 
   @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
     background-image: url("../img/bg-intro-triangle-mobile.svg"), 
@@ -139,6 +139,11 @@
 .page-header__container--small {
   padding-top: 50px;
   padding-bottom: 60px;
+
+  @media (min-width: $tablet) {
+    padding-top: 102px;
+    padding-bottom: 118px;
+  }
 }
 
 .page-header__title {
@@ -156,4 +161,9 @@
 .page-header__title--small {
   width: 230px;
   height: 40px;
+
+  @media (min-width: $tablet) {
+    width: 460px;
+    height: 80px;
+  }
 }

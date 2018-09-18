@@ -3,12 +3,7 @@
 
   @media (min-width: $tablet) {
     display: grid;
-    grid-template-columns: 165px 165px auto 165px 165px;
-  }
-
-  @media (min-width: $desktop) {
-    display: grid;
-    grid-template-columns: 250px 250px auto 250px 250px;
+    grid-template-columns: 20% 20% auto 20% 20%;
   }
 }
 
